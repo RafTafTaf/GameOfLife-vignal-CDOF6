@@ -1,5 +1,6 @@
 import os
 import time
+import numpy as np
 import random
 
 def clear_console():
@@ -8,8 +9,8 @@ def clear_console():
     os.system(command)
 
 def generate_grid(rows, cols):
-    """Generate a grid filled with random 0s and 1s."""
-    return [[random.randint(0, 1) for _ in range(cols)] for _ in range(rows)]
+    """Generate a grid filled with random 0s and 1s using numpy."""
+    return np.random.randint(0, 2, size=(rows, cols)).tolist()
 
 def display_grid(grid, generation):
     """Display the grid and indicate the generation number."""
